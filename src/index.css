@@ -1,0 +1,188 @@
+:root {
+  --primary: #0a2e5c; /* Dark Blue from Branch */
+  --accent-blue: #00b4ff; /* Light Blue */
+  --bg-light: #ffffff;
+  --bg-curve: #e6f7ff;
+  --text-main: #1f2937;
+  --text-muted: #4b5563;
+  --font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  --btn-dark: #0a2e5c;
+  --btn-hover: #1e3a8a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Nav Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 8%;
+  gap: 40px;
+  min-height: 80vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+  z-index: 2;
+}
+
+.hero-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.hero-bg-curve {
+  position: absolute;
+  right: -10%;
+  top: 0;
+  bottom: 0;
+  width: 60%;
+  background: var(--bg-curve);
+  border-radius: 100% 0 0 100%;
+  z-index: 1;
+}
+
+h1.hero-title {
+  font-size: 5rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+p.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 40px;
+}
+
+.btn {
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  text-decoration: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-login {
+  background: var(--btn-dark);
+  color: white;
+}
+
+.btn-cta {
+  background: #333;
+  color: white;
+  padding: 18px 40px;
+  font-size: 1.1rem;
+}
+
+.regulated {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Form Pages (Keep them looking good but adjust colors) */
+.glass {
+  background: white;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.page-transition {
+  width: 100%;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.card {
+  padding: 40px;
+  border-radius: 16px;
+}
+
+input, select {
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+  color: #111827;
+}
+
+input:focus, select:focus {
+  border-color: var(--accent-blue);
+  background: white;
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  border-left-color: var(--primary);
+}
+
+.limit-display {
+  color: var(--primary);
+}

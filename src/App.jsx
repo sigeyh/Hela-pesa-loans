@@ -313,7 +313,9 @@ const HelaPesa = () => {
         <a href="#about">About us</a> <a href="#faq">FAQs</a>
         <a href="#careers">Careers</a> <a href="#news">News</a>
         <a href="#contact">Contact us</a>
-        <button className="btn btn-login" onClick={() => nextStep('auth')}>Login</button>
+        <button className="btn btn-login" onClick={() => nextStep(isLoggedIn ? 'dashboard' : 'auth')}>
+          {isLoggedIn ? 'Dashboard' : 'Login'}
+        </button>
       </div>
     </nav>
   );
@@ -791,6 +793,9 @@ const HelaPesa = () => {
                 <button className="btn btn-login" style={{ width: '100%', justifyContent: 'center' }} onClick={() => nextStep('final')}>
                   Get Loan
                 </button>
+                <button style={backBtnStyle} onClick={() => nextStep('dashboard')}>
+                  Go to Dashboard
+                </button>
               </motion.div>
             </div>
           </motion.div>
@@ -859,6 +864,9 @@ const HelaPesa = () => {
                       </p>
                       <button className="btn btn-login" style={{ width: '100%', justifyContent: 'center' }} onClick={() => handlePayhero(fee)}>
                         Pay KSH {fee} &amp; Get Loan
+                      </button>
+                      <button style={backBtnStyle} onClick={() => nextStep('dashboard')}>
+                        ← Back to Dashboard
                       </button>
                     </>
                   )}

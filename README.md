@@ -1,16 +1,32 @@
-# React + Vite
+# Hela Pesa - Instant Mobile Loans Kenya
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hela Pesa is a premium, mobile-first PWA for instant loan disbursement in Kenya.
 
-Currently, two official plugins are available:
+## 🚀 Deployment (Vercel)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. **Push to GitHub**:
+   ```bash
+   git remote add origin YOUR_REPOSITORY_URL
+   git branch -M main
+   git push -u origin main
+   ```
 
-## React Compiler
+2. **Deploy on Vercel**:
+   - Create a new project on Vercel and import this repository.
+   - Vercel will automatically detect Vite.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+3. **Configure Environment Variables**:
+   Under the Vercel project settings, add the following variables:
+   - `PAYHERO_USERNAME`: Your PayHero username
+   - `PAYHERO_PASSWORD`: Your PayHero password
+   - `PAYHERO_CHANNEL_ID`: 6770
+   - `CALLBACK_URL`: Your Vercel domain + `/api/payhero-callback` (e.g., `https://hela-pesa.vercel.app/api/payhero-callback`)
 
-## Expanding the ESLint configuration
+## 🛠 Features
+- **PWA**: Installable on Android and iOS.
+- **Biometric-style PIN Login**: Secure access to user dashboards.
+- **PayHero Integration**: Real-time STK push for service fees.
+- **Persistent Sessions**: Uses LocalStorage for seamless UX across refreshes.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ⚠️ Important Note
+This version uses a temporary file-based persistence (`/tmp/users.json`) on Vercel, which will be reset when the serverless function cold-starts. For production use, please connect a database like **Vercel Postgres** or **MongoDB**.
